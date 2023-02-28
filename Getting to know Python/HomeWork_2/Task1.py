@@ -1,13 +1,15 @@
-n = int(input())
+from random import randint
+
+n = int(input("Введите количество монет: "))
 heads = 0
-tails = 0
+res = ''
 for i in range(n):
-    x = int(input())
-    if x == 0:
+    top = randint(0, 1)
+    res += f'{top} '
+    if top == 0:
         heads += 1
-    else:
-        tails += 1
-if heads > tails:
-    print(tails)
-else:
-    print(heads)
+if heads < n/2:
+    res += f'--- {heads}'
+else: 
+    res += f'--- {n - heads}'
+print(res)

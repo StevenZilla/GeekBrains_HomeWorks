@@ -1,0 +1,1 @@
+ndf[ndf['population'] == ndf['population'].min()]['households'].max() 
